@@ -1,0 +1,107 @@
+{% block title %}
+    About Me
+{% endblock %}
+
+{% block main %}
+
+<section class="home-content">
+    <div class="row portfolio-row justify-content-center">
+        <div class="col-md-5">
+            <div class="text-center">
+                <h2 class="about-header">My learning path</h2>
+            </div>
+        </div>
+    </div>
+    <div class="timeline">
+        <div class="container-timeline left">
+            <div class="content">
+                    <h2>2011-2015</h2>
+                        <p>Statistical Process Control: Use of data analysis to optimize manufacturing process (Michelin)</p>
+            </div>
+        </div>
+        <div class="container-timeline right">
+            <div class="content">
+                    <h2>2015-2020</h2>
+                        <ul>
+                            <li>SQL: Learned SQL to query databases at large retail organization</li>
+                            <li>Process Optimization: Use of data analysis to optimize retail processes (The Home Depot)</li>
+                        </ul>
+            </div>
+        </div>
+        <div class="container-timeline left">
+            <div class="content">
+                    <h2>2020</h2>
+                        <ul>
+                            <li>
+                                <a target="_blank" class="about-link" href="https://www.codecademy.com/learn/paths/analyze-data-with-python">Codecademy's Analyze Data with Python</a>:
+                                Fundamentals of data analysis with Python
+                            </li>
+                            <li>
+                                <a target="_blank" class="about-link" href="https://www.lewagon.com/tokyo/data-science-course/full-time">Le Wagon Data Science Bootcamp</a>:
+                                Covered statistical methods, machine and deep learning algorithms, and deployment of ML/AI solutions
+                        </ul>
+            </div>
+        </div>
+        <div class="container-timeline right">
+            <div class="content">
+                    <h2>2021</h2>
+                        <p><a target="_blank" class="about-link" href="https://www.codecademy.com/learn/paths/web-development">
+                            Codecademy's Web Development course</a>:
+                            Covers fundamentals of full-stack web development
+                        </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row portfolio-row justify-content-center">
+        <div class="col-md-8">
+            <hr/>
+        </div>
+    </div>
+
+    <div class="row about-row justify-content-center">
+        <div class="col-12 p-0 text-center">
+                <h2 class="about-header">My skills:</h2>
+        </div>
+    </div>
+    <div class="row row-legend justify-content-center">
+        <div class="col-12 p-0 text-center">
+            <p>
+                1 - Basic<span class="about-legend"></span>
+                2 - Novice<span class="about-legend"></span>
+                3 - Intermediate
+            </p>
+            <p class="m-0">
+                4 - Advanced<span class="about-legend"></span>
+                5 - Expert
+            </p>
+        </div>
+    </div>
+    <div class="row row-legend justify-content-center about-header">
+            Hover cursor over bars for more information
+    </div>
+    <div class="row about-row justify-content-center">
+        {% for topic, one_skill in skills.items() %}
+        <div class="col-lg-3 col-md-6 col-12">
+            <div class="skill-cat text-center">
+                <h5>{{ topic }}</h5>
+            </div>
+            <div class="row">
+                {% for item in one_skill %}
+                {% set level = item[1]/5*100 %}
+                <div class="col-12 text-right">
+                    <p>{{ item[0] }} - {{ item[1] }}</p>
+                    <div class="skill-bar">
+                        <div class="skill-spec" style="width: {{ level }}%;">
+                        </div>
+                        <span class="tooltiptext">{{ item[2] }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}
