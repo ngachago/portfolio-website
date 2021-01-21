@@ -11,7 +11,8 @@ skills_df = pd.read_excel("database/skills_db.xlsx")
 
 # connect and create tables if they don't exist yet
 DATABASE_URL = os.environ['DATABASE_URL']
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+conn = psycopg2.connect(DATABASE_URL, sslmode='allow')
+
 cur = conn.cursor()
 
 cur.execute("CREATE TABLE IF NOT EXISTS portfolio \
@@ -54,7 +55,7 @@ cur.execute("TRUNCATE skills RESTART IDENTITY")
 # iterate through the dataframe generated from the Excel file
 for skills_row in skills_df.itertuples():
     cur.execute("INSERT INTO skills (topic, skills, level, tooltip) VALUES (%s, %s, %s, %s)",
-                [skills_row.topic, skills_row.skill, skills_row.level, skills_row.tooltip])
+                [skills_row.topic, skills_row.skills, skills_row.level, skills_row.tooltip])
     conn.commit()
 
 conn.close()

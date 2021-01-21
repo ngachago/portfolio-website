@@ -12,7 +12,8 @@ def return_db_row_for_content_type(content_type):
 
     # connect to database
     DATABASE_URL = os.environ['DATABASE_URL']
-    conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+    conn = psycopg2.connect(DATABASE_URL, sslmode='allow')
+
     cur = conn.cursor()
 
     if content_type == 'title':
