@@ -71,16 +71,21 @@
 
 .title-color
 {
-    height: 600px;
     position: relative;
+    align-content: center;
+    height: 300px;
+    display: flex;
 }
 
 .title-container
 {
-    padding-left: 180px;
-    position: absolute;
+    padding-left: 90px;
     bottom: 150px;
     width: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 @media (max-width: 480px) {
@@ -103,6 +108,7 @@
     font-size: 25px;
     font-weight: bold;
     margin: 0;
+    width: inherit;
 }
 
 .title-description
@@ -200,9 +206,6 @@
     height: 100%;
     border: 2px solid rgba(0,0,0,0.5);
     padding: 5px 5px 5px 5px;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .portfolio-img:hover
