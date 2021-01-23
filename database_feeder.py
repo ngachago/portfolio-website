@@ -8,6 +8,9 @@ portfolio_df = pd.read_excel("database/portfolio_db.xlsx")
 titles_df = pd.read_excel("database/titles_db.xlsx")
 skills_df = pd.read_excel("database/skills_db.xlsx")
 
+# drop empty rows from portfolio_df to avoid parsing issues
+portfolio_df = portfolio_df.dropna(subset=['title'])
+
 
 # connect and create tables if they don't exist yet
 DATABASE_URL = os.environ['DATABASE_URL']

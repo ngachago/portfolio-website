@@ -87,7 +87,6 @@ def get_portfolio_content():
         project_list.append(['placeholder'])
     iterator = iter(project_list)
     zipped = zip(iterator, iterator)
-
     return zipped
 
 
