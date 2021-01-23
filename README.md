@@ -1,5 +1,5 @@
 # Data Science Portfolio Website
-This repository hosts the code for my portfolio site which was built by modifying the code base found [here](https://github.com/julianikulski/portfolio-website).
+This repository hosts the code for my portfolio site which was built by modifying the code found [here](https://github.com/julianikulski/portfolio-website).
 
 
 ## Table of Contents
@@ -30,12 +30,12 @@ If you want to update the database, you need to connect to the remote database i
 4. Get the database credentials by running `heroku pg:credentials:url -a <your app name>`. Copy the Connection URL.
 5. Paste the Connection URL into the `production_input` variable in `sample.run.sh`. Update the file name to `run.sh`.
 6. Create the database locally on PostgreSQL using pgAdmin, which should have been included in installation.
-6. Update the `development_input` variable in `run.sh` with your information.
+7. Update the `development_input` variable in `run.sh` with your information.
 
 Now your local environment has the DATABASE_URL for your remote Heroku PostgreSQL database saved and the code in app.py can access this database from your local computer. The DATABASE_URL in `development_input` allows you to update data and test the site locally before deploying to Heroku.
 
 ### Update Database Content <a name="update_database"></a>
-To update the database content, modify the excel files in the sample_database folder to contain the content you would like to feed to the database. Remove the `sample_` notation from the folder and file names to match the notation expected in the code.
+To update the database content, modify the Excel files in the `sample_database` folder to contain the content you would like to feed to the database. Remove the `sample_` notation from the folder and file names to match the notation expected in the code.
 
 Running `./run.sh dbfeed` in the terminal will update the database locally
 
