@@ -11,7 +11,16 @@ def return_db_row_for_content_type(content_type):
 
     # connect to database
     DATABASE_URL = os.environ['DATABASE_URL']
-    conn = psycopg2.connect(DATABASE_URL, sslmode='allow')
+    ENV = os.environ['ENV']
+
+    if ENV == 'development':
+        sslmode ='allow'
+    elif ENV == 'production':
+        sslmode ='require'
+    else:
+        print("Unknown ENV")
+
+    conn = psycopg2.connect(DATABASE_URL, sslmode=sslmode)
 
     cur = conn.cursor()
 

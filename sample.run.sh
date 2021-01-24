@@ -7,19 +7,24 @@ development_input="postgres://{username}:{password}@{hostname}:{port}/{database-
 # database_name is set when database is created locally on pgAdmin
 
 production_input="<CONNECTION URL FROM HEROKU>"
+development_env_name="development"
+production_env_name="production"
 
 if [[ -z "$input" ]]
 then
+  export ENV="$development_env_name"
   export DATABASE_URL="$development_input"
   python app.py
-elif [[ "$input" == 'dbfeed' ]] # Runs database feeder (update or load excels)
+elif [[ "$input" == 'dbfeed' ]]
 then
+  export ENV="$development_env_name"
   export DATABASE_URL="$development_input"
   python database_feeder.py
 elif [[ "$input" == 'production' ]]
 then
+  export ENV="$production_env_name"
   export DATABASE_URL="$production_input"
-  python app.py
+  python database_feeder.py
 else
   echo "Unrecognized command: $input"
 fi

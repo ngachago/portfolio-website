@@ -14,7 +14,16 @@ portfolio_df = portfolio_df.dropna(subset=['title'])
 
 # connect and create tables if they don't exist yet
 DATABASE_URL = os.environ['DATABASE_URL']
-conn = psycopg2.connect(DATABASE_URL, sslmode='allow')
+ENV = os.environ['ENV']
+
+if ENV == 'development':
+    sslmode ='allow'
+elif ENV == 'production':
+    sslmode ='require'
+else:
+    print("Unknown ENV")
+
+conn = psycopg2.connect(DATABASE_URL, sslmode=sslmode)
 
 cur = conn.cursor()
 
