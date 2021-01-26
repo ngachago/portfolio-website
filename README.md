@@ -34,6 +34,7 @@ If you want to update the database, you need to connect to the remote database i
 7. Update the `development_input` variable in `run.sh` with your local PostgresSQL information.
 
 Your database is now set up locally and on Heroku for both development and production environments.
+**Please note**: `run.sh` is included in `.gitignore` because it contains password information.
 
 ### Development Mode <a name="development"></a>
 It is recommended to make and test changes locally before deploying to Heroku.
