@@ -15,7 +15,7 @@ def index():
 
     return render_template('index.html',
                                 title_text=title_text,
-                                title="EXPLORING DATA SCIENCE",
+                                title="DATA SCIENCE & PRODUCT MANAGEMENT",
                                 id="index")
 
 
