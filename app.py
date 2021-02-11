@@ -11,12 +11,17 @@ app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def index():
 
-    title_text = helper.get_title_content('index')
+    # get all projects from the database
+    zipped = helper.get_portfolio_content()
 
-    return render_template('index.html',
-                                title_text=title_text,
-                                title="DATA SCIENCE & PRODUCT MANAGEMENT",
-                                id="index")
+    # get the title content for the portfolio page
+    title_text = helper.get_title_content('portfolio')
+
+    return render_template('/index.html',
+                            title_text=title_text,
+                            title="PROJECT PORTFOLIO",
+                            id="index",
+                            projects=zipped)
 
 
 @app.route('/portfolio', methods=['POST', 'GET'])
@@ -28,7 +33,7 @@ def portfolio():
     # get the title content for the portfolio page
     title_text = helper.get_title_content('portfolio')
 
-    return render_template('/portfolio.html',
+    return render_template('/index.html',
                             title_text=title_text,
                             title="PROJECT PORTFOLIO",
                             id="portfolio",
