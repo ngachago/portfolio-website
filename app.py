@@ -12,46 +12,46 @@ app = Flask(__name__)
 def index():
 
     # get all projects from the database
-    zipped = helper.get_portfolio_content()
+    # zipped = helper.get_portfolio_content()
 
     # get the title content for the portfolio page
-    title_text = helper.get_title_content('portfolio')
+    # title_text = helper.get_title_content('portfolio')
 
     return render_template('/index.html',
-                            title_text=title_text,
-                            title="PROJECT PORTFOLIO",
-                            id="index",
-                            projects=zipped)
+                            # title_text=title_text,
+                            # title="PROJECT PORTFOLIO",
+                            id="index")
+                            # projects=zipped)
 
 
-@app.route('/portfolio', methods=['POST', 'GET'])
-def portfolio():
+# @app.route('/portfolio', methods=['POST', 'GET'])
+# def portfolio():
 
-    # get all projects from the database
-    zipped = helper.get_portfolio_content()
+#     # get all projects from the database
+#     zipped = helper.get_portfolio_content()
 
-    # get the title content for the portfolio page
-    title_text = helper.get_title_content('portfolio')
+#     # get the title content for the portfolio page
+#     title_text = helper.get_title_content('portfolio')
 
-    return render_template('/index.html',
-                            title_text=title_text,
-                            title="PROJECT PORTFOLIO",
-                            id="portfolio",
-                            projects=zipped)
+#     return render_template('/index.html',
+#                             title_text=title_text,
+#                             title="PROJECT PORTFOLIO",
+#                             id="portfolio",
+#                             projects=zipped)
 
 
-@app.route('/about', methods=['POST', 'GET'])
-def about():
+# @app.route('/about', methods=['POST', 'GET'])
+# def about():
 
-    title_text = helper.get_title_content('about')
+#     title_text = helper.get_title_content('about')
 
-    skills = helper.get_skill_content()
+#     skills = helper.get_skill_content()
 
-    return render_template('/about.html',
-                            title_text=title_text,
-                            skills=skills,
-                            title="ABOUT ME",
-                            id="about")
+#     return render_template('/about.html',
+#                             title_text=title_text,
+#                             skills=skills,
+#                             title="ABOUT ME",
+#                             id="about")
 
 
 @app.route("/robots.txt")
@@ -61,6 +61,7 @@ def robots():
     '''
 
     return send_from_directory(app.static_folder, request.path[1:])
+
 
 if __name__ == '__main__':
     app.run()

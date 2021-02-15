@@ -1,81 +1,171 @@
-{% extends "layout.html" %}
 
-{% block title %}
-    Portfolio
-{% endblock %}
+<!DOCTYPE html>
+<html>
 
-{% block main %}
+<head>
+  <title>Njeri Gachago</title>
+  <link rel="icon" href="static/img/earth.png">
+  <meta charset="UTF-8">
+  <meta name="author" content="Njeri Gachago">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="static/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Playfair+Display:900&display=swap"
+    rel="stylesheet">
+</head>
 
-    <section class="home-content">
-        <div class="container p-0">
-
-            {% for two_projects in projects %}
-            <div class="row portfolio-row justify-content-center">
-                {% if two_projects[1][0] == "placeholder" %}
-                <div class="col-12 col-md-5">
-                    <div class="text-center">
-                        <a class="title-link" target="_blank" href="{{ two_projects[0][4][0][1] }}"><h5>{{ two_projects[0][0] }}</h5></a>
-                        <p class="project-des">
-                            {{ two_projects[0][1] }}
-                        </p>
-                        <p class="skills">
-                            <span class="bold">Skills:</span> {{ two_projects[0][2] }}
-                        </p>
-                    </div>
-                    <div class="row justify-content-center">
-                        <a target="_blank" href="{{ two_projects[0][4][0][1] }}">
-                            <img class="portfolio-img" src="/static/img/{{ two_projects[0][3]}}.png">
-                        </a>
-                    </div>
-                    <div class="row">
-                        {% for button in two_projects[0][4] %}
-                        {% if two_projects[0][4]|length == 2 %}
-                        <div class="col-6 text-center">
-                            <a target="_blank" href="{{ button[1] }}" class="button btn portfolio-btn rounded-0">{{ button[0] }}</a>
-                        </div>
-                        {% else %}
-                        <div class="col-12 text-center">
-                            <a target="_blank" href="{{ button[1] }}" class="button btn portfolio-btn rounded-0">{{ button[0] }}</a>
-                        </div>
-                        {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-                {% else %}
-                    {% for project in two_projects %}
-                        <div class="col-12 col-md-5">
-                            <div class="text-center">
-                                <a target="_blank" class="title-link" href="{{ project[4][0][1] }}"><h5>{{ project[0] }}</h5></a>
-                                <p class="project-des">
-                                    {{ project[1] }}
-                                </p>
-                                <p class="skills">
-                                    <span class="bold">Skills:</span> {{ project[2] }}
-                                </p>
-                            </div>
-                            <div class="row justify-content-center">
-                                <a target="_blank" href="{{ project[4][0][1] }}">
-                                    <img class="portfolio-img" src="/static/img/{{ project[3] }}.png">
-                                </a>
-                            </div>
-                            <div class="row">
-                                {% for button in project[4] %}
-                                {% if project[4]|length == 2 %}
-                                <div class="col-6 text-center">
-                                    <a target="_blank" href="{{ button[1] }}" class="button btn portfolio-btn rounded-0">{{ button[0] }}</a>
-                                </div>
-                                {% else %}
-                                <div class="col-12 text-center">
-                                    <a target="_blank" href="{{ button[1] }}" class="button btn portfolio-btn rounded-0">{{ button[0] }}</a>
-                                </div>
-                                {% endif %}
-                                {% endfor %}
-                            </div>
-                        </div>
-                    {% endfor %}
-                {% endif %}
+<body>
+  <div class="main-wrapper">
+    <div class="contact-inner-wrapper">
+      <header class="image-container" style="">
+        <div class="text-header-container">
+          <h1>Njeri Gachago</h1>
+          <p class="p-bold-text">About <span class="line-separator"> | </span> Projects <span class="line-separator"> | </span> Contact </p>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <div class="arrow-container">
+        <svg width="50" height="30" viewBox="0 0 58 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="arrow-down" fill-rule="evenodd" clip-rule="evenodd"
+            d="M1.81802 1.81802C3.57538 0.0606602 6.42462 0.0606602 8.18198 1.81802L29 22.636L49.818 1.81802C51.5754 0.0606602 54.4246 0.0606602 56.182 1.81802C57.9393 3.57538 57.9393 6.42462 56.182 8.18198L32.182 32.182C30.4246 33.9393 27.5754 33.9393 25.818 32.182L1.81802 8.18198C0.0606602 6.42462 0.0606602 3.57538 1.81802 1.81802Z"
+            fill="#001640" />
+        </svg>
+      </div>
+      <div class="body-container">
+        <h2>About Me</h2>
+        <div class="about-me-container">
+          <div id="avatar">
+            <img src="static/img/headshot.jpg" class="profile-img" alt="avatar">
+            <div class="text-popover" data-toggle="popover" data-content="Howdy!">
             </div>
-            {% endfor %}
-    </section>
+          </div>
+          <div class="about-me">
+            <p>I am a passionate Lean/Agile practitioner. In previous roles in both manufacturing and retail, I led
+            initiatives to reduce operational costs and increase efficiency by introducing reliable products and processes.
+            Drawing insights from data to drive optimization has been a key aspect of all my roles. Learning how to code in
+            Python, JavaScript, HTML and CSS has been a great addition to my analytical skills. </p>
+          </div>
+        </div>
+      </div>
+      <div class="body-container">
+        <h2>Projects</h2>
+        <div class="project-container">
+          <div class="project-image visualizations-img">
+            <div id="carousel-four" class="carousel slide carousel-container" data-interval="false">
+              <div class="carousel-inner">
+                <div class="carousel-item active item carousel-image">
+                  <img src="static/img/heatmap_hour_day.png" class="d-block w-100" alt="...">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-information visualizations-info">
+            <h5>R-style Visualizations in Python</h5>
+            <p>Implementation of visualizations using plotnine</p>
+            <div class="technology-container">
+              <p><span class="skills">Skills</span>: Data Visualization, Python, R</p>
+            </div>
+            <div class="project-btns">
+              <a class="view-live-btn" href="https://njeri-gachago.medium.com/r-style-visualizations-in-python-560c6bbfb14a" target="_blank" rel="nofollow noopener">
+              <span>Blog Post</span>
+              </a>
+              <a class="view-live-btn" href="https://github.com/ngachago/uber_analysis" target="_blank" rel="nofollow noopener">
+              <span>Code</span>
+              </a>
+            </div>
 
-{% endblock %}
+
+          </div>
+          <div class="divider d0"></div>
+          <!-- speech recognition project images -->
+          <div class="project-image speech-img">
+            <div id="carousel-four" class="carousel slide carousel-container" data-interval="false">
+              <div class="carousel-inner">
+                <div class="carousel-item active item carousel-image">
+                  <img src="static/img/speech_rec.png" class="d-block w-100" alt="...">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- speech recognition project info start -->
+          <div class="project-information speech-info">
+            <h5>Speech Emotion Recognition</h5>
+            <p>Implementation of MLP classifier for speech emotion recognition</p>
+            <div class="technology-container">
+              <p><span class="skills">Skills</span>: Deep Learning, Model Tuning, Python</p>
+            </div>
+            <div class="project-btns">
+              <a class="view-live-btn" href="https://njeri-gachago.medium.com/implement-a-speech-emotion-recognition-ser-model-5aa10ce90679" target="_blank" rel="nofollow noopener">
+              <span>Blog Post</span>
+              </a>
+              <a class="view-live-btn" href="https://github.com/ngachago/speech_rec" target="_blank" rel="nofollow noopener">
+              <span>Code</span>
+              </a>
+            </div>
+          </div>
+          <div class="divider d1"></div>
+          <!-- NLP project images start -->
+          <div class="project-image nlp-img">
+            <div id="carousel-four" class="carousel slide carousel-container" data-interval="false">
+              <div class="carousel-inner">
+                <div class="carousel-item active item carousel-image">
+                  <img src="static/img/review_cloud.png" class="d-block w-100" alt="...">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- NLP project info start -->
+          <div class="project-information nlp-info">
+            <h5>Preparing Text Data for NLP</h5>
+            <p>Processing text data for use in machine learning and deep learning models</p>
+            <div class="technology-container">
+              <p><span class="skills">Skills</span>: Natural Language Processing, Data Visualization, Python</p>
+            </div>
+            <div class="project-btns">
+              <a class="view-live-btn" href="https://njeri-gachago.medium.com/the-beginners-guide-to-preparing-text-data-for-natural-language-processing-54270addd990" target="_blank" rel="nofollow noopener">
+              <span>Blog Post</span>
+              </a>
+              <a class="view-live-btn" href="https://github.com/ngachago/SmartStay" target="_blank" rel="nofollow noopener">
+              <span>Code</span>
+              </a>
+            </div>
+          </div>
+      </div>
+    </div>
+    <footer>
+      <h2 id="contact-me-header">Contact Me</h2>
+      <a href="mailto:njeri.gachago@gmail.com">
+        <span>
+          <svg width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M17.0672 0.666504H2.66719C1.67719 0.666504 0.876187 1.44483 0.876187 2.39611L0.867188 12.7738C0.867188 13.725 1.67719 14.5034 2.66719 14.5034H17.0672C18.0572 14.5034 18.8672 13.725 18.8672 12.7738V2.39611C18.8672 1.44483 18.0572 0.666504 17.0672 0.666504ZM16.7072 4.34192L10.3442 8.16436C10.0562 8.33732 9.67819 8.33732 9.39019 8.16436L3.02719 4.34192C2.80219 4.20355 2.66719 3.97006 2.66719 3.71926C2.66719 3.13984 3.32419 2.79392 3.83719 3.0966L9.86719 6.72013L15.8972 3.0966C16.4102 2.79392 17.0672 3.13984 17.0672 3.71926C17.0672 3.97006 16.9322 4.20355 16.7072 4.34192Z"
+              fill="#001640" />
+          </svg>
+        </span>
+      </a>
+      <span class="line-separator line-footer"> | </span>
+      <a class="footer-icon-link" href="https://www.linkedin.com/in/ngachago/">
+        <span>
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2 0C0.895431 0 0 0.895431 0 2V15.2961C0 16.4007 0.89543 17.2961 2 17.2961H16C17.1046 17.2961 18 16.4007 18 15.2961V2C18 0.895431 17.1046 0 16 0H2ZM5.37529 3.24288C4.67432 3.24288 4.32384 3.55747 4.32384 4.18665C4.32384 4.82005 4.67432 5.13675 5.37529 5.13675C5.72577 5.13675 5.98757 5.05441 6.1607 4.88972C6.33806 4.72082 6.42673 4.48646 6.42673 4.18665C6.42673 3.55747 6.07625 3.24288 5.37529 3.24288ZM4.40618 13.0986H6.33806V6.01718H4.40618V13.0986ZM12.7167 13.0986H14.6485V8.48111C14.6485 7.6408 14.4353 6.99895 14.0088 6.55557C13.5823 6.10797 12.9574 5.88416 12.1339 5.88416C11.6526 5.88416 11.2218 5.97284 10.8418 6.15019C10.466 6.32332 10.1704 6.58091 9.95503 6.92294H9.84736L9.58766 6.01718H8.11183V13.0986H10.0437V9.76692C10.0437 8.93083 10.1641 8.33332 10.4047 7.97439C10.6454 7.61124 11.036 7.42966 11.5765 7.42966C11.9735 7.42966 12.2627 7.55846 12.4443 7.81604C12.6259 8.0694 12.7167 8.45155 12.7167 8.9625V13.0986Z"
+              fill="#001640" />
+          </svg>
+        </span>
+      </a>
+    </footer>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $('[data-toggle="popover"]').popover({
+        trigger: 'hover'
+      });
+    })
+  </script>
+</body>
+
+</html>
