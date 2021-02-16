@@ -17,10 +17,12 @@
 <body>
   <div class="main-wrapper">
     <div class="contact-inner-wrapper">
-      <header class="image-container" style="">
+      <header class="image-container">
+        <div id="face">
+            <img src="static/img/headshot.jpg" class="profile-img" alt="avatar">
+          </div>
         <div class="text-header-container">
           <h1>Njeri Gachago</h1>
-          <p class="p-bold-text">About <span class="line-separator"> | </span> Projects <span class="line-separator"> | </span> Contact </p>
         </div>
       </header>
     </div>
@@ -34,23 +36,21 @@
       </div>
       <div class="body-container">
         <h2>About Me</h2>
-        <div class="about-me-container">
+        <div id='about' name='about' class="about-me-container">
           <div id="avatar">
-            <img src="static/img/headshot.jpg" class="profile-img" alt="avatar">
-            <div class="text-popover" data-toggle="popover" data-content="Howdy!">
-            </div>
+            <img src="static/img/kamakura.jpg" class="profile-img" alt="avatar">
           </div>
           <div class="about-me">
-            <p>I am a passionate Lean/Agile practitioner. In previous roles in both manufacturing and retail, I led
-            initiatives to reduce operational costs and increase efficiency by introducing reliable products and processes.
-            Drawing insights from data to drive optimization has been a key aspect of all my roles. Learning how to code in
-            Python, JavaScript, HTML and CSS has been a great addition to my analytical skills. </p>
+            <p>I am a passionate Lean/Agile practitioner, currently based in Tokyo. In previous roles in both manufacturing
+              and retail, I led initiatives to reduce operational costs and increase efficiency by introducing reliable products
+              and processes. Drawing insights from data to drive optimization has been a key aspect of all my roles. Learning how
+            to code in Python, JavaScript, HTML and CSS has been a great addition to my analytical skills.</p>
           </div>
         </div>
       </div>
       <div class="body-container">
         <h2>Projects</h2>
-        <div class="project-container">
+        <div id='projects' name='projects' class="project-container">
           <div class="project-image visualizations-img">
             <div id="carousel-four" class="carousel slide carousel-container" data-interval="false">
               <div class="carousel-inner">
@@ -134,7 +134,7 @@
       </div>
     </div>
     <footer>
-      <h2 id="contact-me-header">Contact Me</h2>
+      <h2 id="contact-me-header" name='contact-me-header'>Contact Me</h2>
       <a href="mailto:njeri.gachago@gmail.com">
         <span>
           <svg width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
