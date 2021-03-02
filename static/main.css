@@ -235,6 +235,14 @@ path.arrow-down {
   align-self: start;
 }
 
+.competition-img {
+  grid-area: competitionImgs;
+}
+
+.competition-info {
+  grid-area: competitionInfo;
+}
+
 .visualizations-img {
   grid-area: visualizationsImgs;
 }
@@ -259,29 +267,6 @@ path.arrow-down {
   grid-area: nlpInfo;
 }
 
-.cl-img {
-  grid-area: clImgs;
-}
-
-.cl-info {
-  grid-area: clInfo;
-}
-
-.jc-img {
-  grid-area: jcImgs;
-}
-
-.jc-info {
-  grid-area: jcInfo;
-}
-
-.cb-img {
-  grid-area: cbImgs;
-}
-
-.cb-info {
-  grid-area: cbInfo;
-}
 
 .divider {
   height: 2px;
@@ -318,13 +303,13 @@ path.arrow-down {
   padding-bottom: 3rem;
 
   grid-template-areas:
-    "visualizationsImgs visualizationsImgs visualizationsImgs visualizationsInfo visualizationsInfo"
+    "competitionImgs competitionImgs competitionImgs competitionInfo competitionInfo "
     "d0 d0 d0 d0 d0"
-    "speechImgs speechImgs speechImgs speechInfo speechInfo "
+    "visualizationsImgs visualizationsImgs visualizationsImgs visualizationsInfo visualizationsInfo"
     "d1 d1 d1 d1 d1"
-    "nlpImgs nlpImgs nlpImgs nlpInfo nlpInfo"
+    "speechImgs speechImgs speechImgs speechInfo speechInfo "
     "d2 d2 d2 d2 d2"
-    "clImgs clImgs clImgs clInfo clInfo "
+    "nlpImgs nlpImgs nlpImgs nlpInfo nlpInfo"
     "d3 d3 d3 d3 d3"
     "jcImgs jcImgs jcImgs jcInfo jcInfo"
     "d4 d4 d4 d4 d4"
@@ -481,20 +466,21 @@ footer {
     grid-column-gap: 0rem;
 
     grid-template-areas:
+      "competitionImgs"
+      "competitionInfo"
+      "d0"
       "visualizationsImgs"
       "visualizationsInfo"
-      "d0"
+      "d1"
       "speechImgs"
       "speechInfo"
+      "d2"
       "nlpImgs"
       "nlpInfo"
-      "d1"
-      "clImgs"
-      "clInfo"
-      "d2"
+      "d3"
       "jcImgs"
       "jcInfo"
-      "d3"
+      "d4"
       "cbImgs"
       "cbInfo";
   }
