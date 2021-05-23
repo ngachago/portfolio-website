@@ -235,6 +235,14 @@ path.arrow-down {
   align-self: start;
 }
 
+.recommender-img {
+  grid-area: recommenderImgs;
+}
+
+.recommender-info {
+  grid-area: recommenderInfo;
+}
+
 .competition-img {
   grid-area: competitionImgs;
 }
@@ -303,17 +311,17 @@ path.arrow-down {
   padding-bottom: 3rem;
 
   grid-template-areas:
-    "competitionImgs competitionImgs competitionImgs competitionInfo competitionInfo "
+    "recommenderImgs recommenderImgs recommenderImgs recommenderInfo recommenderInfo "
     "d0 d0 d0 d0 d0"
-    "visualizationsImgs visualizationsImgs visualizationsImgs visualizationsInfo visualizationsInfo"
+    "competitionImgs competitionImgs competitionImgs competitionInfo competitionInfo "
     "d1 d1 d1 d1 d1"
-    "speechImgs speechImgs speechImgs speechInfo speechInfo "
+    "visualizationsImgs visualizationsImgs visualizationsImgs visualizationsInfo visualizationsInfo"
     "d2 d2 d2 d2 d2"
-    "nlpImgs nlpImgs nlpImgs nlpInfo nlpInfo"
+    "speechImgs speechImgs speechImgs speechInfo speechInfo "
     "d3 d3 d3 d3 d3"
-    "jcImgs jcImgs jcImgs jcInfo jcInfo"
+    "nlpImgs nlpImgs nlpImgs nlpInfo nlpInfo"
     "d4 d4 d4 d4 d4"
-    "cbImgs cbImgs cbImgs cbInfo cbInfo ";
+    "jcImgs jcImgs jcImgs jcInfo jcInfo";
 }
 
 .project-information {
@@ -467,23 +475,23 @@ footer {
     grid-column-gap: 0rem;
 
     grid-template-areas:
+      "recommenderImgs"
+      "recommenderInfo"
+      "d0"
       "competitionImgs"
       "competitionInfo"
-      "d0"
+      "d1"
       "visualizationsImgs"
       "visualizationsInfo"
-      "d1"
+      "d2"
       "speechImgs"
       "speechInfo"
-      "d2"
+      "d3"
       "nlpImgs"
       "nlpInfo"
-      "d3"
-      "jcImgs"
-      "jcInfo"
       "d4"
-      "cbImgs"
-      "cbInfo";
+      "jcImgs"
+      "jcInfo";
   }
 
   .project-information {
